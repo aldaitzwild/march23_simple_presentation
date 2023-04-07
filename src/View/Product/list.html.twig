@@ -1,0 +1,13 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+    Catalogue
+{% endblock %}
+
+{% block content %}
+    <ul>
+    {% for product in products %}
+        <li>{{ product.name }} - {{product.price}}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
