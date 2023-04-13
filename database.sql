@@ -61,3 +61,21 @@ ALTER TABLE `item`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+DROP TABLE product;
+
+CREATE TABLE product (
+id INT PRIMARY KEY AUTO_INCREMENT, 
+name VARCHAR(200), 
+description TEXT, 
+photo_url VARCHAR(250),
+price FLOAT);
+
+
+INSERT INTO product (name, description, price, photo_url)
+VALUES
+	('télécommande', 'télécommande pointeur', 18.00, 'https://www.electrodepot.fr/media/catalog/product/P956356.jpg'),
+	('gourde', 'gourde en verre', 15.23, 'https://www.pimkie.fr/dw/image/v2/AAYN_PRD/on/demandware.static/-/Sites-pimkie-master-catalog/default/dw649bc315/images/917494_152A01_portrait_HD_1.JPG?sw=760&sh=938'),
+	('tasse', 'Tasse grumPHP', 7800.00, 'https://fr.cplfabbrika.com/media/catalog/product/cache/2/image/470x470/9df78eab33525d08d6e5fb8d27136e95/3/7/3744.jpg')
+;
