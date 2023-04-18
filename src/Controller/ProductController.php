@@ -21,4 +21,20 @@ class ProductController extends AbstractController
 
         return $this->twig->render('Product/details.html.twig', ['product' => $product]);
     }
+
+    public function add(): string
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $product = array_map('trim', $_POST);
+
+            //TODO - Add some security controls
+
+            $productManager = new ProductManager();
+            $productManager->insert($product);
+
+            header('Location: /');
+            die();
+        }
+        return $this->twig->render('Product/add.html.twig');
+    }
 }

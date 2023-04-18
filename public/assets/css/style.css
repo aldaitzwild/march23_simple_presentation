@@ -10,3 +10,8 @@ a {
 .main {
     min-height: 100vh;
 }
+
+form {
+    max-width: 800px;
+    margin: auto;
+}
