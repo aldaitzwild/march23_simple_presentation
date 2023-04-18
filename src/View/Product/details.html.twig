@@ -1,15 +1,12 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-
-    <div class="container">
-        <div class="row">
-            <img src="{{product.photo_url}}" class="col-3">
-            <ul class="col-9">
-                <li>Nom du produit : {{ product.name }}</li>
-                <li>Description du produit : {{ product.description }}</li>
-                <li>Prix du produit : {{ product.price }}</li>
-            </ul>
-        </div>
+    <div class="row">
+        <img src="{{product.photo_url}}" class="col-2">
+        <ul class="col-10">
+            <li>Nom du produit : {{ product.name }}</li>
+            <li>Description du produit : {{ product.description }}</li>
+            <li>Prix du produit : {{ product.price }}</li>
+        </ul>
     </div>
 {% endblock %}
