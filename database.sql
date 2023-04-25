@@ -79,3 +79,12 @@ VALUES
 	('gourde', 'gourde en verre', 15.23, 'https://www.pimkie.fr/dw/image/v2/AAYN_PRD/on/demandware.static/-/Sites-pimkie-master-catalog/default/dw649bc315/images/917494_152A01_portrait_HD_1.JPG?sw=760&sh=938'),
 	('tasse', 'Tasse grumPHP', 7800.00, 'https://fr.cplfabbrika.com/media/catalog/product/cache/2/image/470x470/9df78eab33525d08d6e5fb8d27136e95/3/7/3744.jpg')
 ;
+
+CREATE TABLE user (
+	id int PRIMARY KEY AUTO_INCREMENT,
+    login VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+INSERT INTO user (login, password)
+VALUES ('thomas', '$2y$10$B2bdjTb/SSvU1TGnOAoFuubh3CmBv.NnG0vBsA3CeKQmbr6wAetiK');
