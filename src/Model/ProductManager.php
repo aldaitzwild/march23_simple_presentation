@@ -20,4 +20,15 @@ class ProductManager extends AbstractManager
 
         $statement->execute();
     }
+
+    public function selectAllWithDiscount(): array
+    {
+        $query = 'SELECT pr.*, ds.amount as discount 
+                    FROM ' . self::TABLE . ' pr
+                        LEFT JOIN discount ds ON pr.id = ds.product_id
+                    ;
+        ';
+
+        return $this->pdo->query($query)->fetchAll();
+    }
 }

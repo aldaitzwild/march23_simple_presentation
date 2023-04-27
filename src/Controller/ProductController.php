@@ -9,7 +9,7 @@ class ProductController extends AbstractController
     public function list(): string
     {
         $productManager = new ProductManager();
-        $products = $productManager->selectAll();
+        $products = $productManager->selectAllWithDiscount();
 
         return $this->twig->render('Product/list.html.twig', ['products' => $products]);
     }

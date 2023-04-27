@@ -22,7 +22,14 @@
             <tr>
                 <td>{{ product.name }}</td>
                 <td>{{ product.description }}</td>
-                <td>{{ product.price }}</td>
+                <td>
+                    {% if product.discount is null %}
+                        {{ product.price|format_currency('EUR') }}
+                    {% else %}
+                        <span class="text-danger">{{ (product.price * (1 - product.discount))|format_currency('EUR')}}</span>
+                    {% endif %}
+                    
+                </td>
                 <td><a href="/product/details?id={{ product.id }}" class="btn btn-primary">Voir</a></td>
             </tr>
         {% endfor %}
